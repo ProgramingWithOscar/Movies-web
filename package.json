@@ -1,0 +1,20 @@
+{
+  "name": "movies-web",
+  "version": "1.0.0",
+  "description": "Curso practico de API REST con Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProgramingWithOscar/Movies-web.git"
+  },
+  "keywords": [],
+  "author": "Oscar Eduardo Poveda Lozada <oscarpoveda679@gmai.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProgramingWithOscar/Movies-web/issues"
+  },
+  "homepage": "https://github.com/ProgramingWithOscar/Movies-web#readme"
+}
