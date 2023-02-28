@@ -1,8 +1,17 @@
  
+ const api = axios.create({
+  baseURL : 'https://api.themoviedb.org/3/',
+  headers:{
+    'Content-Type': 'application/json;charset=utf-8',
+  },
+  params :{
+    'api_key' : API_KEY,
+  }
+ })
  // En esta funcion se crean los elementos HTML desde javascrip para que por cada iteracion se muestre un elemento
  async function getTrendingPreview(){
-    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=' +API_KEY);
-    const data = await res.json();
+  //aca colocando { data } ya evitamos hcaer el res.json
+    const { data } = await api('trending/movie/day');
 
     const movies = data.results;
     console.log({data, movies});
@@ -27,10 +36,8 @@
     })
   }
 
-  getTrendingPreview();
   async function getCategoriesPreview(){
-    const res = await fetch('https://api.themoviedb.org/3//genre/movie/list?api_key=' +API_KEY);
-    const data = await res.json();
+    const { data } = await api('genre/movie/list');
 
     const categories = data.genres;
     console.log({data, categories});
@@ -53,4 +60,20 @@
         PreviewCategoriesContainer.appendChild(categoryContainer);
     })
   }
-  getCategoriesPreview();
+
+  /*
+    Location y hash{
+      la propiedad de location (hash) permite leer la URL 
+    }
+
+    haschange{
+      permite ejecutar cierto codigo cada vez que cambiemos el hash
+    }
+   */
+   
+
+
+
+
+    getTrendingPreview();
+    getCategoriesPreview();
